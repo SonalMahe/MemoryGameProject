@@ -7,26 +7,23 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
 
 function App() {
-  
 
-  return {
-  
-<>
-<BrowserRouter>
- <Routes>
-    <Route
-          path="/game" element={
-            <ProtectedRoute>
-              <Game />
-            </ProtectedRoute>
-          }
-  
-      </Route>
-      </Routes>
+  return (
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route
+            path="/game" element={
+              <ProtectedRoute>
+                <Game />
+              </ProtectedRoute>
+            }
+          />
+        </Routes>
       </BrowserRouter>
-      </>
-        }
+    </>
 
-
+  );
+}
 
 export default App;
