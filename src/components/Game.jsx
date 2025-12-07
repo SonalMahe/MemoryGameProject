@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
-import
+import { Navigate } from "react-router-dom";
 
   function Game() {
     const [cards, setCards] = useState([]);
     const [flipped, setFlipped] = useState([]);
     const [time, setTime] =useState(0);
     const [difficulty, setDifficulty]= useState("easy");
+  
   }
 
 // Timer //
