@@ -12,10 +12,10 @@ function Game() {
 }
 
 const difficultyPairs = {
-    easy: 6,   
-    medium: 8, 
-    hard: 12,  
-  };
+  easy: 6,
+  medium: 8,
+  hard: 12,
+};
 
 
 // Timer //
@@ -59,13 +59,69 @@ setCards(shuffled);
 
 
 function startGame() {
-    setMoves(0);
-    setTime(0);
-    setFlipped([]);
-    setMatched([]);
+  setMoves(0);
+  setTime(0);
+  setFlipped([]);
+  setMatched([]);
+}
+
+useEffect(() => {
+  startGame();
+}, [difficulty]);
+
+
+//flip card mapping//
+
+function flipCard(index) {
+  if (flipped.length === 2) return;
+  if (flipped.includes(index)) return;
+  if (matched.includes(cards[index].id)) return;
+
+  const newFlipped = [...flipped, index];
+  setFlipped(newFlipped);
+
+  if (newFlipped.length === 2) {
+    setMoves((m) => m + 1);
+
+    const [i1, i2] = newFlipped;
+    if (cards[i1].id === cards[i2].id) {
+      setMatched((prev) => [...prev, cards[i1].id]);
+
+      setFlipped([]);
+
+
+      if (matched.length + 1 === difficultyPairs[difficulty]) {
+        setTimerActive(false);
+        saveStats();
+        setWin(true);
+      }
+
+    } else {
+      setTimeout(() => setFlipped([]), 1000);
+    }
+  }
 }
 
 
+function saveStats() {
+    const stats = JSON.parse(localStorage.getItem("stats") || "[]");
+    stats.push({
+      user: loggedUser,
+      mode: difficulty,
+      moves,
+      time,
+      date: new Date().toLocaleString(),
+    });
+
+    localStorage.setItem("stats", JSON.stringify(stats));
+  }
+
+  function logout() {
+    localStorage.removeItem("loggedIn");
+    navigate("/login");
+  }
+
+  
 return (
   <div
     key={card.key}
