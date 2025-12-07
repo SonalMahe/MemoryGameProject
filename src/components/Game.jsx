@@ -11,6 +11,13 @@ function Game() {
 
 }
 
+const difficultyPairs = {
+    easy: 6,   
+    medium: 8, 
+    hard: 12,  
+  };
+
+
 // Timer //
 
 useEffect(() => {
@@ -49,6 +56,14 @@ const duplicated = [...images, ...images].map((card, index) => ({
 const shuffled = duplicated.sort(() => Math.random() - 0.5);
 setCards(shuffled);
 
+
+
+function startGame() {
+    setMoves(0);
+    setTime(0);
+    setFlipped([]);
+    setMatched([]);
+}
 
 
 return (
