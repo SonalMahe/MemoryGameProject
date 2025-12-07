@@ -138,7 +138,7 @@ function logout() {
 
     
 
-      <div style={{ marginTop: 10, textAlign: "center" }}>
+     //</div> <div style={{ marginTop: 10, textAlign: "center" }}>
         <button onClick={() => setDifficulty("easy")}>Easy</button>
         
       </div>
