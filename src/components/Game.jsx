@@ -2,12 +2,15 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 function Game() {
+  const navigate = useNavigate();
   const [cards, setCards] = useState([]);
   const [flipped, setFlipped] = useState([]);
   const [matched, setMatched] = useState([]);
   const [moves, setMoves] = useState(0);
   const [time, setTime] = useState(0);
   const [difficulty, setDifficulty] = useState("easy");
+  const [timerActive, setTimerActive] = useState(false);
+  const [win, setWin] = useState(false);
 
 }
 
@@ -63,7 +66,11 @@ function startGame() {
   setTime(0);
   setFlipped([]);
   setMatched([]);
+  setWin(false);
+  loadCards();
+  setTimerActive(true);
 }
+
 
 useEffect(() => {
   startGame();
@@ -104,25 +111,39 @@ function flipCard(index) {
 
 
 function saveStats() {
-    const stats = JSON.parse(localStorage.getItem("stats") || "[]");
-    stats.push({
-      user: loggedUser,
-      mode: difficulty,
-      moves,
-      time,
-      date: new Date().toLocaleString(),
-    });
+  const stats = JSON.parse(localStorage.getItem("stats") || "[]");
+  stats.push({
+    user: loggedUser,
+    mode: difficulty,
+    moves,
+    time,
+    date: new Date().toLocaleString(),
+  });
 
-    localStorage.setItem("stats", JSON.stringify(stats));
-  }
+  localStorage.setItem("stats", JSON.stringify(stats));
+}
 
-  function logout() {
-    localStorage.removeItem("loggedIn");
-    navigate("/login");
-  }
+function logout() {
+  localStorage.removeItem("loggedIn");
+  navigate("/login");
+}
 
-  
-return (
+
+
+
+   return (
+    <div className="game-container">
+
+      <h2>Pokémon Memory Game</h2>
+
+    
+
+      <div style={{ marginTop: 10, textAlign: "center" }}>
+        <button onClick={() => setDifficulty("easy")}>Easy</button>
+        
+      </div>
+
+
   <div
     key={card.key}
     className={`card ${isFlipped ? "flipped" : ""}`}
