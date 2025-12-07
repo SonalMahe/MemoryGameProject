@@ -2,14 +2,31 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import Game from './components/game';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+
 
 function App() {
   
 
-  return (
-    <></>
-      
-  )
-}
+  return {
+  
+<>
+<BrowserRouter>
+ <Routes>
+    <Route
+          path="/game" element={
+            <ProtectedRoute>
+              <Game />
+            </ProtectedRoute>
+          }
+  
+      </Route>
+      </Routes>
+      </BrowserRouter>
+      </>
+        }
 
-export default App
+
+
+export default App;

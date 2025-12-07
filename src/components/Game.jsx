@@ -138,7 +138,7 @@ function logout() {
 
     
 
-     //</div> <div style={{ marginTop: 10, textAlign: "center" }}>
+      <div style={{ marginTop: 10, textAlign: "center" }}>
         <button onClick={() => setDifficulty("easy")}>Easy</button>
         
       </div>
@@ -147,8 +147,8 @@ function logout() {
   <div
     key={card.key}
     className={`card ${isFlipped ? "flipped" : ""}`}
-    onClick={() => flipCard(index)}
-  >
+    onClick={() => flipCard(index)}/>
+  
     <div className="card-face front">
       <img src={card.image} alt="pokemon" style={{ width: "80%" }} />
     </div>
