@@ -49,7 +49,7 @@ function Game() {
         image: data.sprites.other["official-artwork"].front_default,
       });
     }
-  }
+  
 
   // Duplicate & Shuffle & Set//
 
@@ -194,7 +194,7 @@ function Game() {
       </button>
     </div>
   );
-
+  }
 }
 export default Game;
 
