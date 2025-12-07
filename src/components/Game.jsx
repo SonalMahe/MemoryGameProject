@@ -1,13 +1,15 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-  function Game() {
-    const [cards, setCards] = useState([]);
-    const [flipped, setFlipped] = useState([]);
-    const [time, setTime] =useState(0);
-    const [difficulty, setDifficulty]= useState("easy");
-  
-  }
+function Game() {
+  const [cards, setCards] = useState([]);
+  const [flipped, setFlipped] = useState([]);
+  const [matched, setMatched] = useState([]);
+  const [moves, setMoves] = useState(0);
+  const [time, setTime] = useState(0);
+  const [difficulty, setDifficulty] = useState("easy");
+
+}
 
 // Timer //
 
@@ -40,13 +42,13 @@ async function loadCards() {
 // Duplicate & Shuffle
 
 const duplicated = [...images, ...images].map((card, index) => ({
-      ...card,
-      key: index + "-" + card.id,
-    }));
+  ...card,
+  key: index + "-" + card.id,
+}));
 
-    const shuffled = duplicated.sort(() => Math.random() - 0.5);
-    setCards(shuffled);
-  }
+const shuffled = duplicated.sort(() => Math.random() - 0.5);
+setCards(shuffled);
+
 
 
 return (
