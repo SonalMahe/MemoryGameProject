@@ -13,10 +13,8 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route
-            path="/game" element={
-              <ProtectedRoute>
+            path="/game" element={ 
                 <Game />
-              </ProtectedRoute>
             }
           />
         </Routes>
