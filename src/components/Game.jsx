@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
   function Game() {
     const [cards, setCards] = useState([]);
@@ -36,6 +36,18 @@ async function loadCards() {
     });
   }
 }
+
+// Duplicate & Shuffle
+
+const duplicated = [...images, ...images].map((card, index) => ({
+      ...card,
+      key: index + "-" + card.id,
+    }));
+
+    const shuffled = duplicated.sort(() => Math.random() - 0.5);
+    setCards(shuffled);
+  }
+
 
 return (
   <div
