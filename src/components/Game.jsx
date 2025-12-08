@@ -60,6 +60,7 @@ function Game() {
 
   const shuffled = duplicated.sort(() => Math.random() - 0.5);
   setCards(shuffled);
+}
 
 
   //Start New Game //
@@ -194,7 +195,7 @@ function Game() {
       </button>
     </div>
   );
-  }
+
 }
 export default Game;
 
