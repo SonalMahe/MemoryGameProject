@@ -1,14 +1,20 @@
 import { useState } from 'react'
 import { BrowserRouter as Router, Routes,Route, Navigate} from 'react-router-dom'
 
-import Login from './Components/login.jsx';
-import  Register from './Components/register.jsx';
+import Login from './Pages/login.jsx';
+import Register from './Pages/register.jsx';
+import Game from './Pages/game.jsx'
+import Navbar from './Components/Navbar.jsx';
+
+
+
 
 function App() {
   
 
   return (
     <Router>
+      <Navbar/>
       <Routes>
         <Route path='/' element= { <Login />}/>
         <Route path='/login' element= { <Login />}/>
