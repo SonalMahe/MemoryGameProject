@@ -5,6 +5,7 @@ import Login from './Pages/login.jsx';
 import Register from './Pages/register.jsx';
 import Game from './Pages/game.jsx'
 import Navbar from './Components/Navbar.jsx';
+import Home from './Pages/Home.jsx';
 
 
 
@@ -16,7 +17,7 @@ function App() {
     <Router>
       <Navbar/>
       <Routes>
-        <Route path='/' element= { <Login />}/>
+        <Route path='/' element= { <Home />}/>
         <Route path='/login' element= { <Login />}/>
         <Route path='/register' element= { <Register />}/>
         <Route path='/game' element= { <Game />}/>
