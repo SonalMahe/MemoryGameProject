@@ -1,68 +1,168 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #4d40e6, #8b5cf6);
   min-height: 100vh;
+  padding: 40px 0;
+  color: white;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+
+
+.auth-container, .game-container {
+  width: 90%;
+  max-width: 480px;
+  margin: 50px auto;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.35);
+  animation: fadeIn 0.85 ease-out;
 }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border-radius: 12px;
+  border: 2px solid rgba(255,255,255,0.4);
+  background: rgba(255,255,255,0.2);
+  color: white;
+  font-size: 1rem;
+}
+
+input::placeholder {
+  color: #e0e0e0;
+}
+
 
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #ffffff, #dcd4ff);
+  font-weight: 700;
+  margin-top: 20px;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  color: #4d40e6;
+  transition: 0.2s;
+  font-size: 1rem;
+  box-shadow: 0 4px 12px rgba(255,255,255,0.4);
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+button:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 18px rgba(255,255,255,0.6);
+}
+
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 16px;
+  margin-top: 25px; 
+}
+
+
+.grid.easy {
+  grid-template-columns: repeat(3, 1fr);
+}
+.grid.medium {
+  grid-template-columns: repeat(4, 1fr);
+}
+.grid.hard {
+  grid-template-columns: repeat(6, 1fr);
+}
+
+
+.card {
+  width: 100%;
+  aspect-ratio: 1/1.25;
+  background: white;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: transform 0.7s ease;
+  transform-style: preserve-3d;
+  position: relative;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.25);
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+.card.flipped {
+  transform: rotateY(180deg);
+}
+
+.card-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: inherit;
+}
+
+.front {
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back {
+  background: #4d40e6;
+  transform: rotateY(180deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.back img {
+  width: 80%;
+  filter: drop-shadow(0 0 8px #00000066);
+}
+
+
+.scoreboard {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  background: rgba(255,255,255,0.25);
+  padding: 12px;
+  border-radius: 14px;
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+
+.win-banner {
+  text-align: center;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 20px;
+  margin-top: 20px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  animation: popIn 0.5s ease-out;
+}
+
+@keyframes popIn {
+  from { transform: scale(0.7); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
 }
