@@ -1,8 +1,12 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+
+const flipSound = new Audio("/sound/CardFlip.wav");
+const matchSound = new Audio("/sound/CardMatch.wav");
+const winSound = new Audio("/sound/gameWin.wav");
+
 
 function Game() {
-  const navigate = useNavigate();
+
   const loggedUser = localStorage.getItem("loggedIn");
 
 
@@ -49,18 +53,18 @@ function Game() {
         image: data.sprites.other["official-artwork"].front_default,
       });
     }
-  
 
-  // Duplicate & Shuffle & Set//
 
-  const duplicated = [...images, ...images].map((card, index) => ({
-    ...card,
-    key: index + "-" + card.id,
-  }));
+    // Duplicate & Shuffle & Set//
 
-  const shuffled = duplicated.sort(() => Math.random() - 0.5);
-  setCards(shuffled);
+    const duplicated = [...images, ...images].map((card, index) => ({
+      ...card,
+      key: index + "-" + card.id,
+    }));
 
+    const shuffled = duplicated.sort(() => Math.random() - 0.5);
+    setCards(shuffled);
+  }
 
   //Start New Game //
   function startGame() {
@@ -86,6 +90,9 @@ function Game() {
     if (flipped.includes(index)) return;
     if (matched.includes(cards[index].id)) return;
 
+    flipSound.currentTime =0;
+    flipSound.play();
+
     const newFlipped = [...flipped, index];
     setFlipped(newFlipped);
 
@@ -94,6 +101,8 @@ function Game() {
 
       const [i1, i2] = newFlipped;
       if (cards[i1].id === cards[i2].id) {
+        matchSound.currentTime =0;
+        matchSound.play();
         setMatched((prev) => [...prev, cards[i1].id]);
 
         setFlipped([]);
@@ -103,6 +112,8 @@ function Game() {
           setTimerActive(false);
           saveStats();
           setWin(true);
+          winSound.currentTime =0;
+          winSound.play();
         }
 
       } else {
@@ -148,7 +159,7 @@ function Game() {
 
       <div className="scoreboard">
         <span>Moves: {moves}</span>
-        <span>Time: {time}</span>
+        <span>Time: {time}s</span>
       </div>
 
 
@@ -168,7 +179,14 @@ function Game() {
               <div className="card-face front">
                 <img src={card.image} alt="pokemon" style={{ width: "80%" }} />
               </div>
-              <div className="card-face back"></div>
+
+              <div className="card-face back">
+                <img
+                  src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png"
+                  alt="pokeball"
+                  className="back-img"
+                />
+              </div>
             </div>
           );
         })}
@@ -195,6 +213,9 @@ function Game() {
     </div>
   );
 
-}}
+}
+
+
+
 export default Game;
 
