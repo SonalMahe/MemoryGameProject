@@ -8,8 +8,7 @@ const winSound = new Audio("/sound/gameWin.wav");
 function Game() {
 
   const loggedUser = localStorage.getItem("loggedIn");
-
-
+  const navigate = useNavigate();
   const [cards, setCards] = useState([]);
   const [flipped, setFlipped] = useState([]);
   const [matched, setMatched] = useState([]);
@@ -25,6 +24,11 @@ function Game() {
     hard: 10,
   };
 
+const difficultyPairs = {
+  easy: 6,
+  medium: 8,
+  hard: 12,
+};
 
   // Timer //
 
