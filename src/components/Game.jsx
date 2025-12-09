@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Logout from "../components/logout.jsx";
 
 const flipSound = new Audio("/sound/CardFlip.wav");
 const matchSound = new Audio("/sound/CardMatch.wav");
@@ -133,11 +134,7 @@ function Game() {
     localStorage.setItem("stats", JSON.stringify(stats));
   }
 
-  function logout() {
-    localStorage.removeItem("loggedIn");
-    navigate("/login");
-  }
-
+ 
 
   return (
     <div className="game-container">
@@ -199,12 +196,7 @@ function Game() {
         </div>
       )}
 
-      <button
-        onClick={logout}
-        style={{ marginTop: 20, background: "#eee", color: "#333" }}
-      >
-        Logout
-      </button>
+     <Logout/>
     </div>
   );
 
