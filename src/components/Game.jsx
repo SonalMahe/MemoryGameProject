@@ -8,7 +8,6 @@ const winSound = new Audio("/sound/gameWin.wav");
 function Game() {
 
   const loggedUser = localStorage.getItem("loggedIn");
-  const navigate = useNavigate();
   const [cards, setCards] = useState([]);
   const [flipped, setFlipped] = useState([]);
   const [matched, setMatched] = useState([]);
@@ -23,12 +22,6 @@ function Game() {
     medium: 8,
     hard: 10,
   };
-
-const difficultyPairs = {
-  easy: 6,
-  medium: 8,
-  hard: 12,
-};
 
   // Timer //
 
@@ -150,7 +143,7 @@ const difficultyPairs = {
     <div className="game-container">
 
       <h2>Pokémon Memory Game
-      <img class="adjust" src="/src/assets/pikachu.png" alt="pikachu" /> </h2>
+      <img className="adjust" src="/src/assets/pikachu.png" alt="pikachu" /> </h2>
 
       <div style={{ marginTop: 10, textAlign: "center" }}>
         <button onClick={() => setDifficulty("easy")}>Easy</button>
