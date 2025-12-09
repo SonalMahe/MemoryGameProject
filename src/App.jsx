@@ -6,6 +6,7 @@ import Game from '../src/components/game.jsx'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 
+
 function App() {
 
   return (
@@ -15,6 +16,11 @@ function App() {
           <Route
             path="/game" element={ 
                 <Game />
+            }
+          />
+            <Route
+            path="/login" element={ 
+                <Login />
             }
           />
           <Route path="*" element={<h2>404 - Page Not Found</h2>} />

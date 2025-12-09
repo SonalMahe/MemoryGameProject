@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import Logout from "../components/logout.jsx";
-
 const flipSound = new Audio("/sound/CardFlip.wav");
 const matchSound = new Audio("/sound/CardMatch.wav");
 const winSound = new Audio("/sound/gameWin.wav");
@@ -88,7 +87,7 @@ function Game() {
     if (flipped.includes(index)) return;
     if (matched.includes(cards[index].id)) return;
 
-    flipSound.currentTime =0;
+    flipSound.currentTime = 0;
     flipSound.play();
 
     const newFlipped = [...flipped, index];
@@ -99,7 +98,7 @@ function Game() {
 
       const [i1, i2] = newFlipped;
       if (cards[i1].id === cards[i2].id) {
-        matchSound.currentTime =0;
+        matchSound.currentTime = 0;
         matchSound.play();
         setMatched((prev) => [...prev, cards[i1].id]);
 
@@ -110,7 +109,7 @@ function Game() {
           setTimerActive(false);
           saveStats();
           setWin(true);
-          winSound.currentTime =0;
+          winSound.currentTime = 0;
           winSound.play();
         }
 
@@ -134,13 +133,13 @@ function Game() {
     localStorage.setItem("stats", JSON.stringify(stats));
   }
 
- 
+
 
   return (
     <div className="game-container">
 
       <h2>Pokémon Memory Game
-      <img className="adjust" src="/src/assets/pikachu.png" alt="pikachu" /> </h2>
+        <img className="adjust" src="/src/assets/pikachu.png" alt="pikachu" /> </h2>
 
       <div style={{ marginTop: 10, textAlign: "center" }}>
         <button onClick={() => setDifficulty("easy")}>Easy</button>
@@ -174,9 +173,7 @@ function Game() {
 
               <div className="card-face back">
                 <img
-                  src="/public/pokemon_card.png"
-                  alt="pokeball"
-                  className="back-img"
+                  src="/pokemon_card.png" alt="pokeball" className="back-img"
                 />
               </div>
             </div>
@@ -196,7 +193,7 @@ function Game() {
         </div>
       )}
 
-     <Logout/>
+      <Logout />
     </div>
   );
 
