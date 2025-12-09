@@ -22,7 +22,7 @@ function Game() {
   const difficultyPairs = {
     easy: 6,
     medium: 8,
-    hard: 12,
+    hard: 10,
   };
 
 
@@ -182,7 +182,7 @@ function Game() {
 
               <div className="card-face back">
                 <img
-                  src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png"
+                  src="/public/pokemon_card.png"
                   alt="pokeball"
                   className="back-img"
                 />

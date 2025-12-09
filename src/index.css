@@ -16,21 +16,34 @@ body {
 
 
 
-.auth-container, .game-container {
+
+.game-container {
   width: 90%;
   max-width: 480px;
   margin: 50px auto;
   padding: 30px;
   background: rgba(255, 255, 255, 0.15);
   border-radius: 20px;
-  backdrop-filter: blur(12px);
-  box-shadow: 0 8px 30px rgba(0,0,0,0.35);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
   animation: fadeIn 0.85 ease-out;
 }
 
+h2 {
+  text-align: center;
+  color: #dcd4ff;
+}
+
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 
@@ -39,8 +52,8 @@ input {
   padding: 12px;
   margin-top: 10px;
   border-radius: 12px;
-  border: 2px solid rgba(255,255,255,0.4);
-  background: rgba(255,255,255,0.2);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.2);
   color: white;
   font-size: 1rem;
 }
@@ -48,7 +61,6 @@ input {
 input::placeholder {
   color: #e0e0e0;
 }
-
 
 button {
   width: 100%;
@@ -62,12 +74,12 @@ button {
   color: #4d40e6;
   transition: 0.2s;
   font-size: 1rem;
-  box-shadow: 0 4px 12px rgba(255,255,255,0.4);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.4);
 }
 
 button:hover {
   transform: scale(1.03);
-  box-shadow: 0 6px 18px rgba(255,255,255,0.6);
+  box-shadow: 0 6px 18px rgba(255, 255, 255, 0.6);
 }
 
 
@@ -75,18 +87,20 @@ button:hover {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
   gap: 16px;
-  margin-top: 25px; 
+  margin-top: 25px;
 }
 
 
 .grid.easy {
   grid-template-columns: repeat(3, 1fr);
 }
+
 .grid.medium {
   grid-template-columns: repeat(4, 1fr);
 }
+
 .grid.hard {
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(5, 1fr);
 }
 
 
@@ -110,7 +124,7 @@ button:hover {
   transform-style: preserve-3d;
   transition: transform 0.6s;
   border-radius: 15px;
-   box-shadow: 0 4px 18px rgba(0,0,0,0.25);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
 }
 
 .card:hover {
@@ -154,7 +168,7 @@ button:hover {
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
-  background: rgba(255,255,255,0.25);
+  background: rgba(255, 255, 255, 0.25);
   padding: 12px;
   border-radius: 14px;
   font-weight: 700;
@@ -174,6 +188,13 @@ button:hover {
 }
 
 @keyframes popIn {
-  from { transform: scale(0.7); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
+  from {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
