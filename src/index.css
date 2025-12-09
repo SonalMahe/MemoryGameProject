@@ -12,9 +12,8 @@ body {
   min-height: 100vh;
   padding: 40px 0;
   color: white;
+  
 }
-
-
 
 
 .game-container {
@@ -32,6 +31,11 @@ body {
 h2 {
   text-align: center;
   color: #dcd4ff;
+}
+
+.adjust{
+  height: 80px;
+  width:90px;
 }
 
 @keyframes fadeIn {
@@ -159,7 +163,7 @@ button:hover {
 }
 
 .back img {
-  width: 80%;
+  width: 78%;
   filter: drop-shadow(0 0 8px #00000066);
 }
 

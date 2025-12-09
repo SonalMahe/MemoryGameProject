@@ -142,13 +142,11 @@ function Game() {
   }
 
 
-
-
   return (
     <div className="game-container">
 
-      <h2>Pokémon Memory Game</h2>
-
+      <h2>Pokémon Memory Game
+      <img class="adjust" src="/src/assets/pikachu.png" alt="pikachu" /> </h2>
 
       <div style={{ marginTop: 10, textAlign: "center" }}>
         <button onClick={() => setDifficulty("easy")}>Easy</button>
