@@ -18,11 +18,6 @@ function App() {
                 <Game />
             }
           />
-            <Route
-            path="/login" element={ 
-                <Login />
-            }
-          />
           <Route path="*" element={<h2>404 - Page Not Found</h2>} />
 
       </Routes>
