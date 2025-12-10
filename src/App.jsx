@@ -1,30 +1,27 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import Game from '../src/components/game.jsx'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-
-
 function App() {
 
   return (
+
     <>
-    <BrowserRouter>
+      <BrowserRouter>
         <Routes>
           <Route
-            path="/game" element={ 
-                <Game />
+            path="/game" element={
+              <Game />
             }
           />
           <Route path="*" element={<h2>404 - Page Not Found</h2>} />
 
-      </Routes>
+        </Routes>
       </BrowserRouter>
     </>
 
   );
+
 }
 
 export default App;
