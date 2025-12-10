@@ -1,18 +1,27 @@
 
 
 .main{
-    align-content: center;
+    width: 100%;
+    min-width: 1040px;
+    height: 100vh;
+    max-height: 900px;
+    margin: 0;
+    padding: 0;
     background-image: url("../assets/bgimage2.svg");
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: bottom;
+    justify-items: center;
 
     backdrop-filter: blur(4px) ;
 }
 
 .auth-container{
     margin-top: 10px;
+    padding: 30px;
     background-color: rebeccapurple;
+    width: 500px;
+    justify-items: center;
 }
 
 .auth{
