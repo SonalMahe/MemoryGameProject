@@ -3,5 +3,54 @@
 .main{
     align-content: center;
     background-image: url("../assets/bgimage2.svg");
+    background-size: 100%;
     background-repeat: no-repeat;
+    background-position: bottom;
+
+    backdrop-filter: blur(4px) ;
+}
+
+.auth-container{
+    margin-top: 10px;
+    background-color: rebeccapurple;
+}
+
+.auth{
+    display: flex;
+    justify-content: center;
+}
+
+.flex{
+    display: flex;
+    
+}
+
+.img-pica{
+    width: 90px;
+}
+
+.img{
+    width: 30px;
+}
+
+.top{
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    
+    gap: 70px;
+}
+
+
+.button:hover{
+    background: #ffdb4d;
+}
+
+.img-top{
+ width: 60px;
+}
+
+
+.bottom-img{
+    width: 100px;
 }
