@@ -1,32 +1,33 @@
-import { useState } from 'react'
-import { BrowserRouter as Router, Routes,Route, Navigate} from 'react-router-dom'
-
 import Login from './Components/login.jsx';
-// import Register from './Components/register.jsx';
-// import Game from './Components/Game.jsx';
-
-
-
-
-
+import './App.css'
+import Game from '../src/components/game.jsx'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
-  
 
   return (
-    <Router>
-      
+    <BrowserRouter>
+
       <Routes>
-        {/* <Route path='/' element = {<Navigate to="/login"/>} /> */}
-        <Route path='/login' element= { <Login />}/>
-        {/* <Route path='/register' element= { <Register />}/> */}
-        
+
+        <Route path='/login' element={<Login />} />
 
       </Routes>
 
-    </Router>
-      
-  )
+      <Routes>
+        <Route
+          path="/game" element={
+            <Game />
+          }
+        />
+        <Route path="*" element={<h2>404 - Page Not Found</h2>} />
+
+      </Routes>
+    </BrowserRouter>
+
+
+  );
+
 }
 
 export default App;
