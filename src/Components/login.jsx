@@ -61,7 +61,7 @@ function Login(){
             </div>
 
             <div className="auth-container">
-                <h2>
+                <h2 className='heading'>
                     Pokémon Memory Game 
                     <img 
                         className="img-pica animate__animated animate__fadeInBottomLeft animate__infinite animate__slower	3s" 
@@ -82,7 +82,6 @@ function Login(){
                         value={username} onChange={(e) => setUsername(e.target.value)} required 
                     />
                     <br />
-                    <br />
 
                     <img className="img animate__animated animate__rotateInDownLeft" src={pokemon507} alt="pokemon507" />
                     <label htmlFor="password" className="label animate__animated animate__flipInX animate">PASSWORD:</label>
@@ -93,6 +92,8 @@ function Login(){
                         placeholder='Enter your Password' 
                         value={password} onChange={(e) => setPassword(e.target.value)} required
                     />
+                    <br />
+                    <br />
 
                     <div className="auth">
                         <img className="bottom-img animate__animated animate__fadeInBottomLeft animate__infinite animate__slower	3s" src={pokemonwithpichachu} alt="pokemonwithpichachu" />
