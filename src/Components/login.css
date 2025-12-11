@@ -27,7 +27,7 @@
 
 .auth{
     display: flex;
-    justify-content: center;
+    
 }
 
 .flex{
@@ -62,5 +62,5 @@
 
 
 .bottom-img{
-    width: 140px;
+    width: 100px;
 }
