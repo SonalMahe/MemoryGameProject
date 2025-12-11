@@ -1,7 +1,7 @@
-import Register from './Components/register.jsx';
+import Register from './components/register.jsx';
 import './App.css';
-import Login from './Components/login.jsx';
-import Game from './Components/Game.jsx';
+import Login from './components/login.jsx';
+import Game from './components/game.jsx';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
@@ -19,17 +19,12 @@ function App() {
 
       <Routes>
         <Route
-          path="/game" element={
-            <Game />
-          }
-        />
+          path='/game' element={ <Game />}/>
         <Route path="*" element={<h2>404 - Page Not Found</h2>} />
 
       </Routes>
     </BrowserRouter>
     </>
-
-
   );
 
 }
