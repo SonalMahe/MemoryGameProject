@@ -1,17 +1,20 @@
+import Register from './Components/register.jsx';
+import './App.css';
 import Login from './Components/login.jsx';
-import './App.css'
-import Game from '../src/components/game.jsx'
+import Game from './Components/Game.jsx';
+
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
 
   return (
+    <>
     <BrowserRouter>
 
       <Routes>
 
         <Route path='/login' element={<Login />} />
-
+        <Route path='/register' element={<Register />} />
       </Routes>
 
       <Routes>
@@ -24,6 +27,7 @@ function App() {
 
       </Routes>
     </BrowserRouter>
+    </>
 
 
   );
