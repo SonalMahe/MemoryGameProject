@@ -1,10 +1,7 @@
-
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import 'animate.css'
 import './login.css'
-
-
 import pikachu from "../assets/pikachu.svg";
 import flareon from "../assets/flareon do crl 1.svg";
 import jolteon from "../assets/jolteon.svg";
@@ -23,27 +20,28 @@ import pokemonwithpichachu from "../assets/pokemonwith-pichachu.svg";
 
 
 
-function Login(){
+function Login() {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
 
-    function handleLogin(e){
+    function handleLogin(e) {
         e.preventDefault();
 
         const users = JSON.parse(localStorage.getItem("users") || "{}");
 
-        if (users[username] && users[username]=== password) {
-        localStorage.setItem("loggedin", username);
+        if (users[username] && users[username] === password) {
+            localStorage.setItem("loggedIn", username);
 
-        alert("Successfully Logged In");
-        navigate("/game")
-        
+            alert("Successfully Logged In");
+            localStorage.setItem("loggedIn", true);
+            navigate("/game")
+
         } else {
             alert("Invalid username or password");
         }
     }
-    return(
+    return (
 
         <div className='main'>
 
@@ -57,29 +55,29 @@ function Login(){
                 <img className="img-top animate__animated animate__rotateIn animate__infinite animate__slower	3s" src={eeveeyellow} alt="jolteon" />
                 <img className="img-top animate__animated animate__rotateIn animate__infinite animate__slower	3s" src={vaporeon} alt="jolteon" />
                 <img className="img-top animate__animated animate__rotateIn animate__infinite animate__slower	3s" src={jolteon} alt="jolteon" />
-                <img className="img-top animate__animated animate__rotateIn animate__infinite animate__slower	3s" src={flareon} alt="flareon" />       
+                <img className="img-top animate__animated animate__rotateIn animate__infinite animate__slower	3s" src={flareon} alt="flareon" />
             </div>
 
             <div className="auth-container">
                 <h2>
-                    Pokémon Memory Game 
-                    <img 
-                        className="img-pica animate__animated animate__fadeInBottomLeft animate__infinite animate__slower	3s" 
+                    Pokémon Memory Game
+                    <img
+                        className="img-pica animate__animated animate__fadeInBottomLeft animate__infinite animate__slower	3s"
                         src={pikachu} alt="pichachu"
                     />
                 </h2>
                 <br />
-                
+
                 <form onSubmit={handleLogin}>
 
                     <img className="img animate__animated animate__rotateInDownLeft" src={eevee} alt="eevee" />
                     <label htmlFor="username" className="label animate__animated animate__flipInX animate">USER NAME:</label>
-                    <input 
+                    <input
                         className="button label animate__animated animate__flipInX animate"
-                        id='username' 
-                        type="text" 
-                        placeholder='Enter Username' 
-                        value={username} onChange={(e) => setUsername(e.target.value)} required 
+                        id='username'
+                        type="text"
+                        placeholder='Enter Username'
+                        value={username} onChange={(e) => setUsername(e.target.value)} required
                     />
                     <br />
                     <br />
@@ -87,20 +85,20 @@ function Login(){
                     <img className="img animate__animated animate__rotateInDownLeft" src={pokemon507} alt="pokemon507" />
                     <label htmlFor="password" className="label animate__animated animate__flipInX animate">PASSWORD:</label>
                     <input
-                        className="button label animate__animated animate__flipInX animate" 
-                       // id='password' 
-                        type="password" 
-                        placeholder='Enter your Password' 
+                        className="button label animate__animated animate__flipInX animate"
+                        // id='password' 
+                        type="password"
+                        placeholder='Enter your Password'
                         value={password} onChange={(e) => setPassword(e.target.value)} required
                     />
 
                     <div className="auth">
                         <img className="bottom-img animate__animated animate__fadeInBottomLeft animate__infinite animate__slower	3s" src={pokemonwithpichachu} alt="pokemonwithpichachu" />
                         <div>
-                            <button type='submit' className=" button label animate__animated animate__flipInX animate">Login</button>   
+                            <button type='submit' className=" button label animate__animated animate__flipInX animate">Login</button>
                             <button type="button" className="button label animate__animated animate__flipInX animate" onClick={() => navigate("/register")}>Sign Up</button>
                         </div>
-                    </div> 
+                    </div>
                 </form>
 
             </div>
