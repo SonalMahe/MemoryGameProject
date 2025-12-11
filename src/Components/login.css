@@ -1,0 +1,66 @@
+
+
+.main{
+    width: 100%;
+    min-width: 1040px;
+    height: 100vh;
+    max-height: 900px;
+    margin: 0;
+    padding: 0;
+    background-image: url("../assets/bgimage2.svg");
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    justify-items: center;
+
+    backdrop-filter: blur(4px) ;
+}
+
+.auth-container{
+    margin-top: 10px;
+    border-radius: 20px;
+    padding: 30px;
+    background-color: rebeccapurple;
+    width: 500px;
+    justify-items: center;
+}
+
+.auth{
+    display: flex;
+    
+}
+
+.flex{
+    display: flex;
+    
+}
+
+.img-pica{
+    width: 90px;
+}
+
+.img{
+    width: 30px;
+}
+
+.top{
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    
+    gap: 70px;
+}
+
+
+.button:hover{
+    background: #b9ac1b;
+}
+
+.img-top{
+ width: 60px;
+}
+
+
+.bottom-img{
+    width: 100px;
+}
