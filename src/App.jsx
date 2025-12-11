@@ -1,3 +1,4 @@
+import Login from './Components/login.jsx';
 import './App.css'
 import Game from '../src/components/game.jsx'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
@@ -5,20 +6,25 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 function App() {
 
   return (
+    <BrowserRouter>
 
-    <>
-      <BrowserRouter>
-        <Routes>
-          <Route
-            path="/game" element={
-              <Game />
-            }
-          />
-          <Route path="*" element={<h2>404 - Page Not Found</h2>} />
+      <Routes>
 
-        </Routes>
-      </BrowserRouter>
-    </>
+        <Route path='/login' element={<Login />} />
+
+      </Routes>
+
+      <Routes>
+        <Route
+          path="/game" element={
+            <Game />
+          }
+        />
+        <Route path="*" element={<h2>404 - Page Not Found</h2>} />
+
+      </Routes>
+    </BrowserRouter>
+
 
   );
 
