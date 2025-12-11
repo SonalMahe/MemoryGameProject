@@ -33,7 +33,7 @@ function Login(){
 
         const users = JSON.parse(localStorage.getItem("users") || "{}");
 
-        if (users[username] && users[username].password === password) {
+        if (users[username] && users[username]=== password) {
         localStorage.setItem("loggedin", username);
 
         alert("Successfully Logged In");
@@ -88,7 +88,7 @@ function Login(){
                     <label htmlFor="password" className="label animate__animated animate__flipInX animate">PASSWORD:</label>
                     <input
                         className="button label animate__animated animate__flipInX animate" 
-                        id='password' 
+                       // id='password' 
                         type="password" 
                         placeholder='Enter your Password' 
                         value={password} onChange={(e) => setPassword(e.target.value)} required

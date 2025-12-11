@@ -1,66 +1,58 @@
-import React, {useState} from 'react';
-import { useNavigate} from "react-router-dom";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import './login.css';
+
 
 export default function Register() {
-const [username, setUsername] = useState("");
-const [password, setPassword] = useState("");
-const [email, setEmail] = useState("");
-const navigate = useNavigate();
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
-function handleRegister(e) {
+  function handleRegister(e) {
     e.preventDefault();
-    
-    const users = JSON.parse(localStorage.getItem("users")) || [];
-    const userExists = users.some(user => user.username === username);
 
-   // Check if username already exists
-    if (userExists) {
-        alert("Username already exists. Please choose a different one.");
-        return;
+    const users = JSON.parse(localStorage.getItem("users") || "{}");
+
+    if (users[username]) {
+      alert("User already exists!");
+      return;
     }
-    // Add new user to the users array
-    users.push({ username, password, email });
+
+    users[username] = password;
     localStorage.setItem("users", JSON.stringify(users));
-    alert("Registration successful!");
+
+    alert("Account created! Please log in.");
     navigate("/login");
-    }
+  }
 
-return (
+  return (
+    <div className="main"> 
     <div className="auth-container">
-        <h2>Register</h2>
-        <form onSubmit={handleRegister}>
-            <input
-                type="text"
-                placeholder="Username"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-                required
-                />
+      <h2>Create Account</h2>
+      <form onSubmit={handleRegister}>
+        <input
+          type="text"
+          placeholder="Enter username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+          required
+        />
 
-            <input
-                type="email"
-                placeholder="Email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-                />
+        <input
+          type="password"
+          placeholder="Enter password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
+        />
 
-            <input
-                type="password"
-                placeholder="Password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-                />
+        <button type="submit">Register</button>
 
-            <button type="submit">Register</button>
-
-            <button onClick={() => navigate("/login")} style={{ marginLeft: '10px' }}>
-                Go to Login
-            </button>
-        </form>
+        <button onClick={() => navigate("/login")} style={{ marginTop: "10px" }}>
+          Back to Login
+        </button>
+      </form>
     </div>
-    );
+    </div>
+  );
 }
-
-
