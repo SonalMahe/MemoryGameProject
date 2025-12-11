@@ -64,3 +64,9 @@
 .bottom-img{
     width: 100px;
 }
+
+
+.btn:hover{
+    background: #1b65b9;
+    color: white;
+}

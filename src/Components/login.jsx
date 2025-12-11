@@ -75,7 +75,7 @@ function Login(){
                     <img className="img animate__animated animate__rotateInDownLeft" src={eevee} alt="eevee" />
                     <label htmlFor="username" className="label animate__animated animate__flipInX animate">USER NAME:</label>
                     <input 
-                        className="button label animate__animated animate__flipInX animate"
+                        className="btn label animate__animated animate__flipInX animate"
                         id='username' 
                         type="text" 
                         placeholder='Enter Username' 
@@ -87,7 +87,7 @@ function Login(){
                     <img className="img animate__animated animate__rotateInDownLeft" src={pokemon507} alt="pokemon507" />
                     <label htmlFor="password" className="label animate__animated animate__flipInX animate">PASSWORD:</label>
                     <input
-                        className="button label animate__animated animate__flipInX animate" 
+                        className="btn label animate__animated animate__flipInX animate" 
                        // id='password' 
                         type="password" 
                         placeholder='Enter your Password' 
@@ -97,8 +97,8 @@ function Login(){
                     <div className="auth">
                         <img className="bottom-img animate__animated animate__fadeInBottomLeft animate__infinite animate__slower	3s" src={pokemonwithpichachu} alt="pokemonwithpichachu" />
                         <div>
-                            <button type='submit' className=" button label animate__animated animate__flipInX animate">Login</button>   
-                            <button type="button" className="button label animate__animated animate__flipInX animate" onClick={() => navigate("/register")}>Sign Up</button>
+                            <button type='submit' className="btn label animate__animated animate__flipInX animate">Login</button>   
+                            <button type="button" className="btn label animate__animated animate__flipInX animate" onClick={() => navigate("/register")}>Sign Up</button>
                         </div>
                     </div> 
                 </form>
