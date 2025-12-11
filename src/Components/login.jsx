@@ -1,8 +1,8 @@
 
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import 'animate.css'
-import './login.css'
+import 'animate.css';
+import './login.css';
 
 
 import pikachu from "../assets/pikachu.svg";
@@ -61,7 +61,7 @@ function Login(){
             </div>
 
             <div className="auth-container">
-                <h2>
+                <h2 className='heading'>
                     Pokémon Memory Game 
                     <img 
                         className="img-pica animate__animated animate__fadeInBottomLeft animate__infinite animate__slower	3s" 
@@ -69,17 +69,24 @@ function Login(){
                     />
                 </h2>
                 <br />
+                <br />
                 
                 <form onSubmit={handleLogin}>
 
                     <img className="img animate__animated animate__rotateInDownLeft" src={eevee} alt="eevee" />
                     <label htmlFor="username" className="label animate__animated animate__flipInX animate">USER NAME:</label>
                     <input 
+<<<<<<< Updated upstream
                         className="btn label animate__animated animate__flipInX animate"
                         id='username' 
+=======
+                        className="button label animate__animated animate__flipInX animate"
+>>>>>>> Stashed changes
                         type="text" 
                         placeholder='Enter Username' 
-                        value={username} onChange={(e) => setUsername(e.target.value)} required 
+                        value={username} 
+                        onChange={(e) => setUsername(e.target.value)} 
+                        required 
                     />
                     <br />
                     <br />
@@ -87,18 +94,31 @@ function Login(){
                     <img className="img animate__animated animate__rotateInDownLeft" src={pokemon507} alt="pokemon507" />
                     <label htmlFor="password" className="label animate__animated animate__flipInX animate">PASSWORD:</label>
                     <input
+<<<<<<< Updated upstream
                         className="btn label animate__animated animate__flipInX animate" 
                        // id='password' 
+=======
+                        className="button label animate__animated animate__flipInX animate" 
+>>>>>>> Stashed changes
                         type="password" 
                         placeholder='Enter your Password' 
-                        value={password} onChange={(e) => setPassword(e.target.value)} required
+                        value={password} 
+                        onChange={(e) => setPassword(e.target.value)} 
+                        required
                     />
 
                     <div className="auth">
                         <img className="bottom-img animate__animated animate__fadeInBottomLeft animate__infinite animate__slower	3s" src={pokemonwithpichachu} alt="pokemonwithpichachu" />
                         <div>
+<<<<<<< Updated upstream
                             <button type='submit' className="btn label animate__animated animate__flipInX animate">Login</button>   
                             <button type="button" className="btn label animate__animated animate__flipInX animate" onClick={() => navigate("/register")}>Sign Up</button>
+=======
+                            <button type='submit' className=" button label animate__animated animate__flipInX animate">Login</button>   
+                            <button type="button" className="button label animate__animated animate__flipInX animate" 
+                                onClick={() => navigate("/register")}>Sign Up
+                            </button>
+>>>>>>> Stashed changes
                         </div>
                     </div> 
                 </form>
