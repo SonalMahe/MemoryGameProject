@@ -22,7 +22,6 @@ function App() {
             </ProtectedRoute>} />
             <Route path="/" element={<Login />} />
           <Route path="*" element={<h2>404 - Page Not Found</h2>} />
-
         </Routes>
       </BrowserRouter>
     </>
