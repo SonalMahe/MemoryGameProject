@@ -36,6 +36,7 @@ function Login() {
 
 
         alert("Successfully LoggedIn");
+        localStorage.setItem("loggedIn", true);
         navigate("/game")
         
         } else {
