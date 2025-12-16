@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import Logout from "./logout.jsx";
-
 const flipSound = new Audio("/sound/CardFlip.wav");
 const matchSound = new Audio("/sound/CardMatch.wav");
 const winSound = new Audio("/sound/gameWin.wav");
@@ -199,8 +198,6 @@ function Game() {
   );
 
 }
-
-
 
 export default Game;
 

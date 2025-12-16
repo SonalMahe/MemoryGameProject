@@ -3,7 +3,6 @@ import './App.css';
 import Login from './components/login.jsx';
 import Game from './components/game.jsx';
 import ProtectedRoute from './components/protectedRoute.jsx';
-
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
