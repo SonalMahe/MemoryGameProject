@@ -98,8 +98,8 @@ function Login() {
                     <div className="auth">
                         <img className="bottom-img animate__animated animate__fadeInBottomLeft animate__infinite animate__slower	3s" src={pokemonwithpichachu} alt="pokemonwithpichachu" />
                         <div>
-                            <button type='submit' className="button label animate__animated animate__flipInX animate">Login</button>   
-                            <button type="button" className="button label animate__animated animate__flipInX animate" onClick={() => navigate("/register")}>Sign Up</button>
+                            <button type='submit' className="button">Login</button>   
+                            <button type="button" className="button" onClick={() => navigate("/register")}>Sign Up</button>
                         </div>
                     </div> 
                 </form>
