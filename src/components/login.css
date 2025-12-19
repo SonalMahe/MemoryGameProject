@@ -10,8 +10,9 @@
     background-image: url("../assets/bgimage2.svg");
     background-size: 80%;
     background-repeat: no-repeat;
-    background-position: bottom;
+    background-position: center;
     justify-items: center;
+    align-items: center;
     backdrop-filter: blur(4px) ;
 }
 
@@ -49,7 +50,6 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 70px;
 }
 
 
@@ -82,11 +82,26 @@
 
 @media (max-width: 480px) {
   .img-top {
+    width: 20px;
+  }
+
+  .auth-container{
+    max-width: 200px;
+  }
+
+  .img-pica{
     width: 40px;
+}
+.img{
+    width: 20px;
+}
+
+  .top{
+    gap: 10px;
   }
 
   .bottom-img {
-    width: 80px;
+    width: 50px;
   }
 
   .button {
@@ -102,6 +117,11 @@
 
   .auth-container {
     max-width: 450px;
+ 
+  }
+
+   .top{
+    gap: 40px;
   }
 }
 
