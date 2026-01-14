@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
 * {
-  margin: 0;
-  padding: 0;
+  margin: 5px;
+  padding: 5px;
   box-sizing: border-box;
 }
 
@@ -16,10 +16,10 @@ body {
 }
 
 .game-container {
-  width: 90%;
+  width: 100%;
   max-width: 480px;
   margin: 50px auto;
-  padding: 30px;
+  padding: 10px;
   background: rgba(255, 255, 255, 0.15);
   border-radius: 20px;
   backdrop-filter: blur(10px);
@@ -33,7 +33,7 @@ h2 {
 }
 
 .adjust{
-  height: 70px;
+  height: 60px;
   width:80px;
 }
 
@@ -89,7 +89,7 @@ button:hover {
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-  gap: 16px;
+  gap: 8px;
 }
 
 
