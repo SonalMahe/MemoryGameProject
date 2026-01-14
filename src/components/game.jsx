@@ -18,9 +18,9 @@ function Game() {
   const [win, setWin] = useState(false);
 
   const difficultyPairs = {
-    easy: 6,
-    medium: 8,
-    hard: 10,
+    easy: 3,
+    medium: 6,
+    hard: 8,
   };
 
   // Timer //
